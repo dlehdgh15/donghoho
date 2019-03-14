@@ -1,0 +1,31 @@
+import java.awt.Container;
+import java.awt.FlowLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+public class Label01 extends JFrame {
+             public Label01() {
+            	 this.setTitle("°¶·¯¸®");
+            	 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            	 
+            	 Container c = this.getContentPane();
+            	 c.setLayout(new FlowLayout());
+            	 this.setSize(200, 200);
+            	 
+            	 ImageIcon beaty =new ImageIcon("images/image01.png");
+            	 JLabel imageLabel = new JLabel(beaty);
+            	 c.add(imageLabel);
+            	 
+            	 ImageIcon normalIcon = new ImageIcon("images/image01.png");
+            	 JLabel label = new JLabel("ÇÏÆ®",normalIcon,SwingConstants.CENTER);
+            	 this.setVisible(true);
+             }
+	public static void main(String[] args) {
+		new Label01();
+
+	}
+
+}

@@ -1,0 +1,17 @@
+
+public class EX04 {
+
+	public static void main(String[] args) {
+	int five=0;
+	int j=1;
+	do {
+		if(j%5==0) {
+			five=j;
+			System.out.println(five);
+		}
+	j++;}while(j<21);
+		}
+    
+	}
+
+

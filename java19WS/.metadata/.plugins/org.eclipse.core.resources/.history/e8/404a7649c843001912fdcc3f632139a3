@@ -1,0 +1,26 @@
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Dialogue01 extends JFrame {
+	public Dialogue01() {
+		setTitle("다이얼로그 예제");
+		setSize(300,300);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.setLayout(new FlowLayout());
+		JButton btn = new JButton("커스텀 다이얼로그");
+		this.add(btn);
+		
+		this.setVisible(true);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		new Dialogue01();
+
+	}
+
+}

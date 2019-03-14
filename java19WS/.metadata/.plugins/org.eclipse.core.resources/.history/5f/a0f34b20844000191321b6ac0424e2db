@@ -1,0 +1,32 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class RadioEX01 extends JFrame {
+	
+	public RadioEX01() {
+		this.setTitle("°¶·¯¸®");
+		this.setSize(500, 500);
+			
+		JPanel radioPanel = new JPanel();
+		radioPanel.setBackground(Color.gray);
+		
+	     Container c = new Container();
+	     c.add(radioPanel,BorderLayout.NORTH);
+	     
+		
+				
+		}
+	
+		
+		
+	
+	public static void main(String[] args) {
+		new RadioEX01();
+
+	}
+
+}

@@ -1,0 +1,43 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.TextField;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class chart02 extends JFrame {
+               public chart02() {
+            	   this.setTitle("차트보여주기");
+            	   this.setSize(500, 500);
+            	   
+            	   Container c = getContentPane();
+            	   c.setLayout(new BorderLayout());
+            	   
+            	   JPanel text = new JPanel();
+            	   text.add(new JLabel("1/4분기 실적"));
+            	   text.add(new TextField(10));
+            	   text.add(new JLabel("2/4분기 실적"));
+            	   text.add(new TextField(10));
+            	   text.add(new JLabel("3/4분기 실적"));
+            	   text.add(new TextField(10));
+            	   text.add(new JLabel("4/4분기 실적"));
+            	   text.add(new TextField(10));
+            	   JButton btn = new JButton("확인");
+            	   this.add(btn);
+            	   this.add(text,BorderLayout.NORTH);
+            	   
+ 
+            	   this.setVisible(true);
+            	   
+            	   
+            	   
+            	   
+               }
+	public static void main(String[] args) {
+		    new chart02();
+
+	}
+
+}

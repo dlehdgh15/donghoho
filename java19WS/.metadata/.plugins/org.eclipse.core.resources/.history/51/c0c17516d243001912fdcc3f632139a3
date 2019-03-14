@@ -1,0 +1,117 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class HW13 extends JFrame {
+	private ImageIcon[] image = {    //이미지를 저장할 배열생성
+			new ImageIcon("image/spiderman.png"),   //이미지 순차적으로 저장
+			new ImageIcon("image/wonderwoman.png"),
+			new ImageIcon("image/betman.png"),
+			new ImageIcon("image/superman.png"),
+	};
+	
+	
+	private JLabel imagela = new JLabel(); 
+	
+	public HW13() {
+		
+		
+		this.setTitle("갤러리");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		createMenu();
+		Container c = this.getContentPane();
+	    
+		this.setLayout(new BorderLayout()); //브로드레이아웃생성
+		getContentPane().add(imagela,BorderLayout.CENTER); //이미지 레이블 가운데부착
+		
+		
+		
+		
+		
+	    
+	    
+	    
+	    
+	    
+	    
+	    this.setSize(500, 500);
+	    this.setVisible(true);
+	    
+		
+		
+		
+		
+		
+	  
+		
+	}
+	
+	
+	
+
+	private void createMenu() {
+		JMenuBar jm= new JMenuBar();
+		JMenuItem jmt[] = new JMenuItem[4];
+		String[] item = {"view","hide","reshow","exit"};
+		
+		JMenu screen = new JMenu("screen");
+		
+		
+	
+	
+	MenuActionListener listen = new MenuActionListener();
+	for(int i=0; i<jmt.length; i++) {
+		jmt[i]=new JMenuItem(item[i]);
+		jmt[i].addActionListener(listen);
+		screen.add(item[i]);
+	}
+	
+	jm.add(screen);
+	setJMenuBar(jm);
+	
+	
+	}
+	
+	class MenuActionListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String name = e.getActionCommand();
+			switch(name) {
+			case "view":
+				imagela.setIcon(new ImageIcon("image/spiderman.png"));
+				break;
+			case "hide":
+				imagela.setVisible(false);
+				break;
+			case "reshow":
+				imagela.setVisible(true);
+				break;
+			case "exit":
+			    System.exit(0);
+			    break;
+			}
+			
+			
+		}
+		
+		
+	}
+
+
+
+
+	public static void main(String[] args) {
+		new HW13();
+
+	}
+
+}

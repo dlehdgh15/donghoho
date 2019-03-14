@@ -1,0 +1,36 @@
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Chart01 extends JFrame {
+                public Chart01() {
+                	this.setTitle("차트");
+                	this.setSize(500, 500);
+                	
+                	
+                	this.setContentPane(new MyPanel());
+                	
+                	this.setVisible(true);
+                	
+                }
+                
+                class MyPanel extends JPanel{
+                	public void paintComponent(Graphics g) {
+                		super.paintComponents(g);
+                		
+                		//막대그래프
+                		g.drawString("매출현황", 200, 30);
+                		g.drawString("1/4분기",40,65);
+                		g.fillRect(100, 50, 50, 20);
+                		g.drawString("2/4분기",40,100);
+                		g.fillRect(100, 85, 50, 40);
+                	}
+                	
+                }
+	public static void main(String[] args) {
+		new Chart01();
+
+	}
+
+}

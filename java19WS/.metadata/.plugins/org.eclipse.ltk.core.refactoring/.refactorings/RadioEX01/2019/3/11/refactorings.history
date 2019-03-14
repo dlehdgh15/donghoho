@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 4 elements to &apos;HW13/src/image&apos;&#x0D;&#x0A;- Original project: &apos;RadioEX01&apos;&#x0D;&#x0A;- Destination element: &apos;HW13/src/image&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     superman.png&#x0D;&#x0A;     betman.png&#x0D;&#x0A;     wonderwoman.png&#x0D;&#x0A;     spiderman.png&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="=HW13/src&lt;image" element1="image/superman.png" element2="image/betman.png" element3="image/wonderwoman.png" element4="image/spiderman.png" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1552288764490" units="0" version="1.0"/>
+</session>

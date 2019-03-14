@@ -1,0 +1,117 @@
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+class MyDialog extends JDialog{
+	private JLabel lable = new JLabel("공백또는 입력안된곳 확인하세요 ");
+	private JButton okbt = new JButton("확인");
+	
+
+
+ public MyDialog () {
+	 setLayout(new FlowLayout());
+	 add(lable);
+	 add(okbt);
+	 setSize(200,100);
+	 
+	 okbt.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			setVisible(false);
+			
+		}
+		 
+	 });
+	 
+	 
+ }
+}
+
+public class Haksa extends JFrame {
+	       private JTextField[] txt = {
+	    		   new JTextField(20),
+	    		   new JTextField(20),
+	    		   new JTextField(20),
+	    		   new JTextField(20),
+	    		   
+	       };
+	       
+	       private JButton[] btn={
+	    	   new JButton("목록"),
+	    	   new JButton("등록"),
+	    	   new JButton("수정"),
+	    	   new JButton("삭제")
+	       };
+	       private MyDialog dialog;
+	
+	public Haksa() {
+        	 this.setTitle("학사관리");
+        	 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        	 
+        	 Container c = this.getContentPane();
+        	 c.setLayout(new FlowLayout());
+        	 
+        	dialog = new MyDialog();
+        	 
+        	 c.add(new JLabel("이름"));
+        	 c.add(txt[0]);
+        	 c.add(new JLabel("학번"));
+        	 c.add(txt[1]);
+        	 c.add(new JLabel("학과"));
+        	 c.add(txt[2]);
+        	 c.add(new JLabel("주소"));
+        	 c.add(txt[3]);
+        	 JTextArea ta=new JTextArea(7,25);
+        	 
+        	 btn[1].addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					for(int i=0; i<btn.length; i++) {
+						if(txt[i].getText().equals("") || (txt[i].getText().length()==0)) {
+							dialog.setVisible(true);
+							
+						}
+						else {
+							for(int j=0; j<btn.length; j++) {
+						 ta.setText(txt[i].getText());
+							}
+						}
+							
+						
+					}
+					
+				}});
+        	 
+        	 btn[3]
+        	 
+        	 c.add(new JScrollPane(ta));
+        	 c.add(btn[0]);
+        	 c.add(btn[1]);
+        	 c.add(btn[2]);
+        	 c.add(btn[3]);
+        	 
+        	 this.setSize(300, 500);
+        	 this.setVisible(true);
+        	 
+        	
+        	 
+        	 
+        	  
+        	  
+          }
+	public static void main(String[] args) {
+		new Haksa();
+	}
+
+}

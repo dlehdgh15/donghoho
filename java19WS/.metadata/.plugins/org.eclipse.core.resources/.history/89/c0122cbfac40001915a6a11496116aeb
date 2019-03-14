@@ -1,0 +1,59 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class HW12 extends JFrame {
+	private String name[] = {"스파이더맨","원더우먼","베트맨","슈퍼맨"};
+	private ImageIcon[] image = {
+			new ImageIcon("image/spiderman.png"),
+			new ImageIcon("image/wonderwoman.png"),
+			new ImageIcon("image/betman.png"),
+			new ImageIcon("image/superman.png"),
+	};
+	private JLabel imagela = new JLabel(image[0]);
+	
+	public HW12() {
+		ImageIcon rtbt = new ImageIcon("image/right.png");
+		ImageIcon ltbt = new ImageIcon("image/left.png");
+		this.setTitle("갤러리");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = this.getContentPane();
+		this.setLayout(new BorderLayout());
+		
+		
+		
+		JButton btn1 = new JButton("",rtbt);
+		JButton btn2 = new JButton("",ltbt);
+		
+		JPanel buttonpn = new JPanel();
+	    buttonpn.add(btn2);
+	    buttonpn.add(btn1);
+	    
+	    this.add(buttonpn,BorderLayout.SOUTH);
+	    this.add(imagela,BorderLayout.CENTER);
+	    
+	    
+	    this.setSize(500, 500);
+	    this.setVisible(true);
+	    
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+
+	public static void main(String[] args) {
+		new HW12();
+
+	}
+
+}

@@ -1,0 +1,33 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
+
+public class Tab01 extends JFrame{
+     public Tab01() {
+    	 this.setTitle("ÅÇÅ°¸¸µé±â");
+    	 this.setSize(500, 500);
+    	 Container c = getContentPane();
+    	 JTabbedPane pane = createTabbedPane();
+    	 c.add(pane,BorderLayout.NORTH);
+    	 
+    	 c.setVisible(true);
+    	 
+     }
+     
+     
+	private JTabbedPane createTabbedPane() {
+		JTabbedPane pane = new JTabbedPane();
+		pane.add("tab1",new JLabel(new ImageIcon()))
+		
+		return pane;
+	}
+
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

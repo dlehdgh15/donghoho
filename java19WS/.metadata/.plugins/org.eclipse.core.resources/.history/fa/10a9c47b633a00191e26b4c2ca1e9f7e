@@ -1,0 +1,39 @@
+class Mouse{
+int rightbt;//오른쪽 버튼 필드생성
+int leftbt; // 왼쪽 버튼 필드생성
+
+void set (int rightbt, int leftbt) {
+	this.rightbt=rightbt;
+	this.leftbt=leftbt;
+	
+}
+	  public void mouseMove() {             //마우스무브 메서드생성
+		  System.out.println("마우스를 오른쪽으로 " + rightbt + "만큼왼쪽으로" + leftbt + "만큼 움직였습니다");
+	  }
+}
+
+class whill extends Mouse{  //휠마우스 클래스생성
+	int whills; //휠 필드생성
+	
+	
+}
+
+class Laser extends Mouse{  //레이저마우스 클래스생성
+    int lase; //레이저  필드생성
+    
+}
+
+
+
+
+
+
+public class MouseHW {
+
+	public static void main(String[] args) {
+		Mouse m = new Mouse();
+		m.set(20,30);
+		m.mouseMove();
+	}
+
+}

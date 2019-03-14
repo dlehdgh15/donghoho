@@ -1,0 +1,48 @@
+import java.awt.FlowLayout;
+import java.awt.TextField;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
+class MyDialog extends JDialog{
+	private TextField tf = new TextField(10);
+	private JButton btn4 = new JButton("ok!");
+	public MyDialog(JFrame frame,String title) {
+		super(frame,title);
+		this.setLayout(new FlowLayout());
+		this.add(tf);
+		this.add(btn4);
+		
+		
+	}
+	
+	
+}
+
+public class Dialogue01 extends JFrame {
+	public Dialogue01() {
+		setTitle("다이얼로그 예제");
+		setSize(500,500);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.setLayout(new FlowLayout());
+		JButton btn = new JButton("커스텀 다이얼로그");
+		this.add(btn);
+		JButton btn1 = new JButton("Confirm다이얼로그");
+		this.add(btn1);
+		JButton btn2 = new JButton("message 다이얼로그");
+		this.add(btn2);
+		
+		
+		this.setVisible(true);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		new Dialogue01();
+
+	}
+
+}

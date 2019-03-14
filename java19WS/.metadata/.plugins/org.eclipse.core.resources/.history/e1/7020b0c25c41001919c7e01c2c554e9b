@@ -1,0 +1,52 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Graphics01 extends JFrame {
+	private MyPanel panel = new MyPanel();
+	public Graphics01(){
+		this.setTitle("그래픽");
+		this.setSize(500, 500);
+		
+		this.setContentPane(panel);
+		
+		this.setVisible(true);
+		
+		
+		
+	}
+	
+	class MyPanel extends JPanel{
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			g.setColor(Color.RED);//색지정
+			g.drawLine(20, 20, 100, 100); //직선
+			g.drawRect(120, 20, 100, 100);
+			g.drawOval(240,	20, 100, 100);
+			g.drawString("Graphics", 300, 300);
+			g.drawArc(360, 20, 100, 100, 90, 270);
+			
+			
+			int [] x = {80,40,80,120};
+			int [] y = {40,120,200,120};
+			g.fillPolygon(x, y, 3);
+			
+			ImageIcon imageIcon = new ImageIcon("image/apple.png");
+		    Image image = imageIcon.getImage();
+		    g.drawImage(image, 20, 20,250,100,50,0,150,150, this);
+		    
+			
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		new Graphics01();
+
+	}
+
+}

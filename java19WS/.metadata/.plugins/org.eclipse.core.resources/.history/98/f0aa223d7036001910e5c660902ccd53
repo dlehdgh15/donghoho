@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class EX04 {
+
+	public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	
+	for(int i=1; i<=5; i++) {
+		System.out.println("학생의 국어성적 입력하세요: \n");
+		int korea = scanner.nextInt();
+		System.out.println("학생의 영어성적 입력하세요: \n");
+		int english = scanner.nextInt();
+		System.out.println("학생의 수학성적 입력하세요: \n");
+		int math= scanner.nextInt();
+		
+		int sum=0;
+		sum=korea+english+math;
+		double avg = sum/3;
+		
+		System.out.println(i+ "번쨰 학생의 평균은 "+ avg+ "입니다\n");
+	
+		
+		
+		}
+	
+		}
+    
+	}
+}
+

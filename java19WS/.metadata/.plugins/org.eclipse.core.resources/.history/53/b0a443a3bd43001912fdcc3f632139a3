@@ -1,0 +1,39 @@
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class Menu01 extends JFrame {
+          public Menu01() {
+        	  setTitle("메뉴프로그램");
+        	  createMenu();
+        	  setSize(250,200);
+        	  setVisible(true);
+        	  
+        	  
+          }
+	private void createMenu() {
+			 JMenuBar mb =new JMenuBar();
+			 JMenu screenmenu = new JMenu("Screen");
+			 
+			 screenmenu.add(new JMenuItem("Load"));
+			 screenmenu.add(new JMenuItem("Hide"));
+			 screenmenu.add(new JMenuItem("Reshow"));
+			 screenmenu.addSeparator();
+			 screenmenu.add(new JMenuItem("Exit"));
+			 
+			 mb.add(screenmenu);
+			 mb.add(new JMenu("Edit"));
+			 mb.add(new JMenu("Source"));
+			 mb.add(new JMenu("Project"));
+			 mb.add(new JMenu("Run"));
+			 
+			 setJMenuBar(mb);
+		
+		}
+	public static void main(String[] args) {
+		new Menu01();
+
+	}
+
+}

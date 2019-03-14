@@ -1,0 +1,73 @@
+import java.awt.Container;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class HW15 extends JFrame{
+    private final int FLYING_UNIT =10;          
+	private JLabel imagela = new JLabel(new ImageIcon("image/rocket2.png"));
+	private JLabel imagela2 = new JLabel(new ImageIcon("image/devil.png"));
+              
+	public HW15() {
+		
+		setTitle("게임만들기");
+		Container c = getContentPane();
+		c.setLayout(null);
+		c.add(imagela);
+		c.add(imagela2);
+		c.addKeyListener(new MyKeyListener());
+		imagela.setLocation(400,400);
+		imagela.setSize(300,300);
+		imagela2.setLocation(350, 0);
+		imagela2.setSize(200,200);
+		
+		setSize(800,800);
+		setVisible(true);
+		
+		c.setFocusable(true);
+		c.requestFocus();
+		
+		
+		
+		
+		
+		
+	}
+	
+	class MyKeyListener extends KeyAdapter{
+		public void keyPressed(KeyEvent e) {
+			int keyCode = e.getKeyCode();
+			
+			switch(keyCode) {
+			case KeyEvent.VK_UP:
+				imagela.setLocation(imagela.getX(), imagela.getY()-FLYING_UNIT);
+				break;
+			case KeyEvent.VK_DOWN:
+				imagela.setLocation(imagela.getX(), imagela.getY()+FLYING_UNIT);
+				break;
+			case KeyEvent.VK_LEFT:
+				imagela.setLocation(imagela.getX()-FLYING_UNIT, imagela.getY());
+				break;
+			case KeyEvent.VK_RIGHT:
+				imagela.setLocation(imagela.getX()+FLYING_UNIT, imagela.getY());
+				break;
+			
+			
+			}
+		}
+		
+	}
+	
+	class TimerThread extends Thread{
+		
+		
+		
+	}
+	public static void main(String[] args) {
+		new HW15();
+	}
+
+}

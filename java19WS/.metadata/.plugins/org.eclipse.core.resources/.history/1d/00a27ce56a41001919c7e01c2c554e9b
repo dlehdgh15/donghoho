@@ -1,0 +1,52 @@
+class MyThread extends Thread{
+	public void run() {
+		
+		int n=0;
+				while(true) {
+					n++;
+					System.out.println("MyThread: "+n);
+					try {
+						Thread.sleep(1000);
+						
+						
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					
+				}
+	}
+	
+}
+
+
+class MyThread2 extends Thread{
+	public void run() {
+		
+		int n=0;
+				while(true) {
+					n++;
+					System.out.println("MyThread2: "+n);
+					try {
+						Thread.sleep(1000);
+						
+						
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					
+				}
+	}
+	
+}
+public class Thread01  {
+
+	public static void main(String[] args) {
+		
+		
+		MyThread th = new MyThread();
+		th.start();//쓰레드 시작
+		MyThread2 th2 = new MyThread2();
+		th2.start();
+	}
+
+}

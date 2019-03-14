@@ -1,0 +1,23 @@
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class Label01 extends JFrame {
+             public Label01() {
+            	 this.setTitle("°¶·¯¸®");"
+            	 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            	 
+            	 Container c = this.getContentPane();
+            	 c.setLayout(new FlowLayout());
+            	 
+            	 ImageIcon beaty =new ImageIcon("images/image01.png");
+            	 JLabel imageLabel = new Jabel(beaty);
+            	 c.add(imageLabel);
+            	 this.setVisible(true);
+             }
+	public static void main(String[] args) {
+		new Label01();
+
+	}
+
+}

@@ -1,0 +1,49 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+public class RadioEX01 extends JFrame {
+	//Radio버튼
+	private JRadioButton[] radio = new JRadioButton[3];
+	private String[] name = {"사과","배","체리"};
+	
+	
+	public RadioEX01() {
+		this.setTitle("갤러리");
+		this.setSize(500, 500);
+			
+		JPanel radioPanel = new JPanel();
+		radioPanel.setBackground(Color.gray);
+		
+		//그룹생성
+		ButtonGroup g = new ButtonGroup();
+		for(int i=0; i<radio.length; i++) {
+			radio[i]=new JRadioButton(name[i]);
+			g.add(radio[i]);
+			radioPanel.add(radio[i]);
+			
+		}
+		
+	     Container c = new Container();
+	     this.add(radioPanel,BorderLayout.NORTH);
+	     radioPanel.setSize(100,100);
+	     
+	     
+		 this.setVisible(true);
+				
+		}
+	
+		
+		
+	
+	public static void main(String[] args) {
+		new RadioEX01();
+
+	}
+
+}

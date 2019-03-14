@@ -1,0 +1,71 @@
+import java.awt.FlowLayout;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
+class MyDialog extends JDialog{
+	private TextField tf = new TextField(10);
+	private JButton btn4 = new JButton("ok!");
+	public MyDialog(JFrame frame,String title) {
+		super(frame,title,true);
+		this.setLayout(new FlowLayout());
+		this.add(tf);
+		this.add(btn4);
+		this.setSize(300, 200);
+		
+	}
+	
+	
+}
+
+public class Dialogue01 extends JFrame {
+	private Dialogue01 dialog1;
+	public Dialogue01() {
+		
+		setTitle("다이얼로그 예제");
+		setSize(500,500);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.setLayout(new FlowLayout());
+		JButton btn = new JButton("커스텀 다이얼로그");
+		this.add(btn);
+		dialog1= new Dialogue01(this,"test");
+		btn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				dialog1.setVisible(true);
+				
+			}});
+		
+		
+		JButton btn1 = new JButton("Confirm다이얼로그");
+		this.add(btn1);
+		JButton btn2 = new JButton("message 다이얼로그");
+		this.add(btn2);
+		
+		
+		this.setVisible(true);
+		
+		
+	}
+
+	public Dialogue01(Dialogue01 dialogue01, String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	private ActionListener ActionListener() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void main(String[] args) {
+		new Dialogue01();
+
+	}
+
+}

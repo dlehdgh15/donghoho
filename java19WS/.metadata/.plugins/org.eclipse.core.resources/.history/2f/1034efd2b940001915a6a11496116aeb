@@ -1,0 +1,90 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class HW13 extends JFrame {
+	
+	private File[] image;
+	private String[] file ;
+	private int count1 =0;
+	
+	private JLabel imagela = new JLabel();
+	
+	public HW13() {
+		
+		image = new File("c:/myphoto").listFiles();
+		
+		file = new String[image.length];
+	    for(int i=0; i<image.length;i++) {
+	    	file[i]=image[i].getPath();
+	    	System.out.println(file[i]);
+	    }
+	    
+	     imagela = new JLabel(file[0]);
+		
+		ImageIcon rtbt = new ImageIcon("image/right.png");
+		ImageIcon ltbt = new ImageIcon("image/left.png");
+		this.setTitle("°¶·¯¸®");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = this.getContentPane();
+		this.setLayout(new BorderLayout());
+		
+		
+		JButton btn1 = new JButton("",ltbt);
+		JButton btn2 = new JButton("",rtbt);
+		
+		JPanel buttonpn = new JPanel();
+	    buttonpn.add(btn1);
+	    buttonpn.add(btn2);
+	    
+	    btn2.addActionListener(new MyActionListener());
+	    btn1.addActionListener(new MActionListener());
+	    this.add(buttonpn,BorderLayout.SOUTH);
+	    this.add(imagela,BorderLayout.CENTER);
+	    
+	    
+	    
+	    
+	    this.setSize(500, 500);
+	    this.setVisible(true);	  
+		
+	}
+	
+	
+	
+	class MyActionListener implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			
+			
+			
+		}
+		
+	}
+	
+	class MActionListener implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			
+			
+			
+			
+		}
+		
+	}
+	
+
+	public static void main(String[] args) {
+		new HW13();
+
+	}
+	}
+	
+
+
